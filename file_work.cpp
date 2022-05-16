@@ -71,5 +71,6 @@ namespace IO
 
 int main()
 {
+    IO::search("C:\\", "7z.exe");
     return 0;
 }
