@@ -40,37 +40,41 @@ namespace IO
         return size.QuadPart;
     }
 
-    void search(string path, LPCSTR file_name)
+    std::string search(std::string path, std::string fileName, int level = 0, int maxLevel = 10)
     {
         WIN32_FIND_DATAA fd;
-        string dir = path;
+        std::string dir = path;
         HANDLE it = FindFirstFileA((dir + "\\*.*").c_str(), &fd);
-
+    
         if (it != INVALID_HANDLE_VALUE)
         {
             do
             {
-                 dir = path + "\\" + fd.cFileName;
-                 if (fd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY && lstrcmpA(fd.cFileName, ".") != 0 && lstrcmpA(fd.cFileName, "..") != 0)
-                 {
-                     search(dir, file_name);
-                 }
-                 else if ((fd.dwFileAttributes & FILE_ATTRIBUTES))
-                 {
-                     if(lstrcmpA(fd.cFileName, file_name))
-                     {
-                        cout << dir << endl;
-                        break;
-                     }
-                 }
-            } while(FindNextFileA(it, &fd));
+                dir = path + "\\" + fd.cFileName;
+                if (fd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY 
+                    && lstrcmpA(fd.cFileName, ".") != 0 
+                    && lstrcmpA(fd.cFileName, "..") != 0 
+                    && level < maxLevel)
+                {
+                    search(dir, fileName, level + 1, maxLevel);
+                }
+                else if (fd.dwFileAttributes & FILE_ATTRIBUTES)
+                {
+                    if (fd.cFileName == fileName)
+                    {
+                        std::cout << dir << std::endl;
+                        return dir;
+                    }
+                }
+            } while (FindNextFileA(it, &fd));
             FindClose(it);
         }
+        return "";
     }
 }
 
 int main()
 {
-    IO::search("C:\\", "7z.exe");
+    IO::search("C:\\Program Files", "7z.exe");
     return 0;
 }
