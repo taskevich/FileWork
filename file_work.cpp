@@ -6,6 +6,7 @@
 namespace IO
 {
     // 123
+    // 456
     BOOL move_file(LPCSTR from, LPCSTR to)
     {
         return MoveFileA(from, to);
