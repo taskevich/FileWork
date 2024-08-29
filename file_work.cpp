@@ -9,6 +9,8 @@ namespace IO
     {
         return MoveFileA(from, to);
     }
+    ////////////////////////////////////////
+    ///////// TEST /////////////////////////
 
     BOOL is_exist(LPCSTR path, BOOL is_file)
     {
