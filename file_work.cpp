@@ -7,10 +7,10 @@ namespace IO
 {
     // 123
     // 456
-    BOOL move_file(LPCSTR from, LPCSTR to)
-    {
-        return MoveFileA(from, to);
-    }
+    // BOOL move_file(LPCSTR from, LPCSTR to)
+    // {
+    //     return MoveFileA(from, to);
+    // }
 
     BOOL is_exist(LPCSTR path, BOOL is_file)
     {
