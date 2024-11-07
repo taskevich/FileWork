@@ -16,7 +16,7 @@ namespace IO
         double i_was_declared3 = 3;
 
 
-
+        пизда
 
 
         int dfgfd34534543 = 0;
