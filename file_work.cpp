@@ -10,7 +10,8 @@ namespace IO
         return MoveFileA(from, to);
     }
 
-    void hello_world() {}
+    void hello_world() { // TESTIC
+    }
 
     BOOL is_exist(LPCSTR path, BOOL is_file)
     {
