@@ -14,6 +14,12 @@ namespace IO
         int i_was_declared = 0;
         double i_was_declared2 = 2;
         double i_was_declared3 = 3;
+
+
+
+
+
+        int dfgfd34534543 = 0;
     }
 
     BOOL is_exist(LPCSTR path, BOOL is_file)
