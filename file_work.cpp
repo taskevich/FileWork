@@ -12,7 +12,8 @@ namespace IO
 
     void hello_world() { // TESTIC
         int i_was_declared = 0;
-        double i_was_declared = 2;
+        double i_was_declared2 = 2;
+        double i_was_declared3 = 3;
     }
 
     BOOL is_exist(LPCSTR path, BOOL is_file)
