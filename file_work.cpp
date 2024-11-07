@@ -18,6 +18,8 @@ namespace IO
 
         пизда
 
+        gdfgdfgdfgdgdfdg
+
 
         int dfgfd34534543 = 0;
     }
