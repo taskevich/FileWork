@@ -7,7 +7,6 @@ namespace IO
 {
     BOOL move_file(LPCSTR from, LPCSTR to)
     {
-        int i = 0;
         return MoveFileA(from, to);
     }
 
