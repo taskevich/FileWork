@@ -6,8 +6,7 @@
 namespace IO
 {
     BOOL move_file(LPCSTR from, LPCSTR to)
-    {
-        // 123
+    {
         return MoveFileA(from, to);
     }
 
